@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js">
+        </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myDiv">
+</div>
+<script>
+ var trace = {        x: [1, 2, 3, 4, 5, 6, 7, 8],
+         y: [1, 4, 9, 16, 25, 36, 49, 64],        mode: 'line'    };
+var data = [ trace ];   Plotly.newPlot('myDiv', data);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js">
+        </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myDiv">
+</div>
+<script>
+   var data = [{
+    type: 'scattergeo',
+    mode: 'markers',
+    locations: ['FRA', 'DEU', 'RUS', 'ESP'],
+    marker: {
+        size: [10, 10, 10, 10],
+        color: [100, 20, 40, 50],
+        cmin: 50,
+        cmax: 50,
+        colorscale: 'red',
+        colorbar: {
+            title: 'Gravité de la région',
+            ticksuffix: '%',
+            showticksuffix: 'last'
+        },
+        line: {
+            color: 'black'
+        }
+    },
+    name: 'europe data'
+}];
+
+var layout = {
+    'geo': {
+        'scope': 'word',
+        'resolution': 50
+    }
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>
