@@ -1,0 +1,46 @@
+body {
+background-color: #9999ff;
+}
+
+div.centre {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+
+div.centre2 {
+    position:absolute;
+    left: 50%;
+    top: 150%;
+    width: 400px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+
+
+
+div.left {
+    position:absolute;
+    left: 70%;
+    top: 50%;
+    width: 400px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+
+div.left2 {
+
+    left: 65%;
+    right:150%;
+    top: 150%;
+    width: 400px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
