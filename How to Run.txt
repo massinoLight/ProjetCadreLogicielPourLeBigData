@@ -6,4 +6,6 @@ Point 5. Creat a folder called .ebextensions
 Point 6. Inside .ebextensions we need a python.config file.
 Point 7. Mention the commands in python.config
 
+Azerty
+
 ssh -i "cleRsaUbuntuServer.pem" ubuntu@ec2-3-95-150-120.compute-1.amazonaws.com
