@@ -20,7 +20,7 @@ def listeData(cheminJson):
 
 #on extrait uniquement les données qui nous intérésse a savoir uniquement d'un pays passé en parmétre
 def recherche_data_pays(pays):
-    listedesdata=listeData('JSONData/data.json')
+    listedesdata=listeData('JSONData/covidData.json')
     for i in range(len(listedesdata)):
        item=listedesdata.__getitem__(i)
        if item["countriesAndTerritories"] == pays:
@@ -94,36 +94,36 @@ def moyenneDeCasParMois(pays,mois,moisFin,donnee):
 def casEnMoyenneParMois (pays):
     moyenne = []
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 1, 1), datetime.datetime(2020, 1, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 2, 1), datetime.datetime(2020, 2, 29),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 3, 1), datetime.datetime(2020, 3, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 4, 1), datetime.datetime(2020, 4, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 5, 1), datetime.datetime(2020, 5, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 6, 1), datetime.datetime(2020, 6, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 7, 1), datetime.datetime(2020, 7, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 8, 1), datetime.datetime(2020, 8, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 9, 1), datetime.datetime(2020, 9, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 10, 1), datetime.datetime(2020, 10, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 11, 1), datetime.datetime(2020, 11, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDeCasParMois(pays, datetime.datetime(2020, 12, 1), datetime.datetime(2020, 12, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
 
 
@@ -158,35 +158,38 @@ def moyenneDemortsParMois(pays,moisDebut,moisFin,donnee):
 def mortEnMoyenneParMois(pays):
     moyenne = []
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 1, 1), datetime.datetime(2020, 1, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 2, 1), datetime.datetime(2020, 2, 29),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 3, 1), datetime.datetime(2020, 3, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 4, 1), datetime.datetime(2020, 4, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 5, 1), datetime.datetime(2020, 5, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 6, 1), datetime.datetime(2020, 6, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 7, 1), datetime.datetime(2020, 7, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 8, 1), datetime.datetime(2020, 8, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 9, 1), datetime.datetime(2020, 9, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 10, 1), datetime.datetime(2020, 10, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 11, 1), datetime.datetime(2020, 11, 30),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     moyenne.append(moyenneDemortsParMois(pays, datetime.datetime(2020, 12, 1), datetime.datetime(2020, 12, 31),
-                                         listeData('JSONData/data.json')))
+                                         listeData('JSONData/covidData.json')))
 
     return moyenne,round(max(moyenne))
+
+print(mortEnMoyenneParMois('France'))
+print(casEnMoyenneParMois('France'))
