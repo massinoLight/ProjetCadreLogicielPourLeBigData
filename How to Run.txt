@@ -5,3 +5,5 @@ Point 4. Create a requirements.txt file. Command : pip freeze > requirements.txt
 Point 5. Creat a folder called .ebextensions
 Point 6. Inside .ebextensions we need a python.config file.
 Point 7. Mention the commands in python.config
+
+ssh -i "Hadoop.pem" ec2-user@ec2-3-21-186-219.us-east-2.compute.amazonaws.com
