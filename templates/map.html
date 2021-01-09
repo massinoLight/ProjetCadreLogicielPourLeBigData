@@ -22,7 +22,7 @@
         colorscale: 'red',
         colorbar: {
             title: 'Gravité de la région',
-            ticksuffix: '%',
+            ticksuffix: ' moyenne',
             showticksuffix: 'last'
         },
         line: {
@@ -34,7 +34,7 @@
 
 var layout = {
     'geo': {
-        'scope': 'world',
+        'scope':'{{ continent }}',
         'resolution': 200
     }
 };

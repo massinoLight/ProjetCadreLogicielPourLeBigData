@@ -28,20 +28,25 @@
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Afficher la map</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
+
+                   <li>
+                    <a href="{{ url_for('afrique') }}">Afrique</a>
+                </li>
+                  <li>
+                    <a href="{{ url_for('ameriqueNord') }}">Amerique du nord</a>
+                </li>
+                   <li>
+                    <a href="{{ url_for('ameriqueSud') }}">Amerique du sud</a>
+                </li>
+                  <li>
+                    <a href="{{ url_for('asie') }}">Asie</a>
+                </li>
                 <li>
                     <a href="{{ url_for('europe') }}">Europe</a>
                 </li>
-                <li>
-                    <a href="#">Afrique</a>
-                </li>
-                <li>
-                    <a href="#">Amerique</a>
-                </li>
+
                   <li>
-                    <a href="#">Asie</a>
-                </li>
-                  <li>
-                    <a href="../templates/world.html">Monde</a>
+                    <a href="{{ url_for('europe') }}">Monde</a>
                 </li>
               </ul>
 	          </li>

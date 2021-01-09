@@ -39,6 +39,27 @@ def envoyer():
 def pays():
     return render_template('pays.html')
 
+@application.route('/afrique', methods=['GET', 'POST'])
+def afrique():
+    return render_template('map.html', continent='africa')
+
+@application.route('/ameriqueNord', methods=['GET', 'POST'])
+def ameriqueNord():
+    return render_template('map.html', continent='north america')
+
+@application.route('/ameriqueSud', methods=['GET', 'POST'])
+def ameriqueSud():
+    return render_template('map.html', continent='south america')
+
+@application.route('/asie', methods=['GET', 'POST'])
+def asie():
+    return render_template('map.html', continent='asia')
+
 @application.route('/europe', methods=['GET', 'POST'])
 def europe():
-    return render_template('europe.html')
+    return render_template('map.html', continent='europe')
+
+
+@application.route('/monde', methods=['GET', 'POST'])
+def monde():
+    return render_template('map.html' , continent='world')

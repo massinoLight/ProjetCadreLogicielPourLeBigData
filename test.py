@@ -1,5 +1,10 @@
 import os
 import pycountry
+############################################################
+#      permet de générer le fichier monde.json              #
+# a partir de Hive qui va exécuter le traitement de la req #
+############################################################
+
 
 if __name__ == "__main__":
     paysArg=""
