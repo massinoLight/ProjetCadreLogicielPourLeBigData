@@ -42,43 +42,46 @@ def pays():
 
 @application.route('/afrique', methods=['GET', 'POST'])
 def afrique():
-    l = listeData("JSONData/Europe.json")
-    isoCode = []
-    indicateur = []
-    size = []
-    indice=0
-    taille=0;
-    for item in l:
-        isoCode.append(item['Code pays'])
-        if item['Nombre d\'hospitalisation en moyenne'] >10:
-            indice=indice+10
-            indicateur.append(10)
-            size.append(10)
-        print(item['Nombre d\'hospitalisation en moyenne'])
-        print(item['Nombre de tests en moyenne'])
-        print(item['Moyenne d\'age'])
-        print(item['Moyenne des cas'])
-        print(item['Moyenne des morts'])
-        print("***********************")
-    return render_template('map.html', continent='africa')
+    l = listeData("JSONData/Afrique.json")
+    sc=score(l)
+    iso=isoCode(l)
+
+
+    return render_template('map.html', continent='africa',codepays=iso,scoring=sc)
 
 @application.route('/ameriqueNord', methods=['GET', 'POST'])
 def ameriqueNord():
-    return render_template('map.html', continent='north america')
+    l = listeData("JSONData/North America.json")
+    sc = score(l)
+    iso = isoCode(l)
+    return render_template('map.html', continent='north america', codepays=iso, scoring=sc)
 
 @application.route('/ameriqueSud', methods=['GET', 'POST'])
 def ameriqueSud():
-    return render_template('map.html', continent='south america')
+    l = listeData("JSONData/South America.json")
+    sc = score(l)
+    iso = isoCode(l)
+    return render_template('map.html', continent='south america', codepays=iso, scoring=sc)
 
 @application.route('/asie', methods=['GET', 'POST'])
 def asie():
-    return render_template('map.html', continent='asia')
+    l = listeData("JSONData/Asie.json")
+    sc = score(l)
+    iso = isoCode(l)
+
+    return render_template('map.html', continent='asia', codepays=iso, scoring=sc)
 
 @application.route('/europe', methods=['GET', 'POST'])
 def europe():
-    return render_template('map.html', continent='europe')
+    l = listeData("JSONData/Europe.json")
+    sc = score(l)
+    iso = isoCode(l)
+    return render_template('map.html', continent='europe', codepays=iso, scoring=sc)
 
 
 @application.route('/monde', methods=['GET', 'POST'])
 def monde():
-    return render_template('map.html' , continent='world')
+    l = listeData("JSONData/monde.json")
+    sc = score(l)
+    iso = isoCode(l)
+    return render_template('map.html' , continent='world', codepays=iso, scoring=sc)

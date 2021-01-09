@@ -13,10 +13,23 @@
    var data = [{
     type: 'scattergeo',
     mode: 'markers',
-    locations: ['FRA', 'DEU', 'RUS', 'ESP','ITA','PRT','GBR'],
+    locations: [
+    {% for item in codepays %}
+            "{{ item }}",
+          {% endfor %}
+
+    ],
     marker: {
-        size: [10, 10, 10, 10,10,10,10],
-        color: [100, 20, 40, 50,100,50,75],
+        size: [
+        {% for item in codepays %}
+            "{{ 10 }}",
+          {% endfor %}
+        ],
+        color: [
+        {% for item in scoring %}
+            "{{ item }}",
+          {% endfor %}
+        ],
         cmin: 50,
         cmax: 50,
         colorscale: 'red',
