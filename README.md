@@ -55,6 +55,6 @@ Lien vers le serveurrrrrrrrrrrr
  - https://flask.palletsprojects.com/en/1.1.x/
  - https://docs.aws.amazon.com/ec2/?id=docs_gateway
  - https://hadoop.apache.org/docs/stable/
-
+ - https://hive.apache.org/
 
    
