@@ -1,5 +1,6 @@
 from flask import Flask, Markup, render_template,request
 from covid_19 import nbCasTotal, nbMortTotal, listeData, casEnMoyenneParMois, mortEnMoyenneParMois
+from traitement import *
 import datetime
 
 application = Flask(__name__)
@@ -41,6 +42,24 @@ def pays():
 
 @application.route('/afrique', methods=['GET', 'POST'])
 def afrique():
+    l = listeData("JSONData/Europe.json")
+    isoCode = []
+    indicateur = []
+    size = []
+    indice=0
+    taille=0;
+    for item in l:
+        isoCode.append(item['Code pays'])
+        if item['Nombre d\'hospitalisation en moyenne'] >10:
+            indice=indice+10
+            indicateur.append(10)
+            size.append(10)
+        print(item['Nombre d\'hospitalisation en moyenne'])
+        print(item['Nombre de tests en moyenne'])
+        print(item['Moyenne d\'age'])
+        print(item['Moyenne des cas'])
+        print(item['Moyenne des morts'])
+        print("***********************")
     return render_template('map.html', continent='africa')
 
 @application.route('/ameriqueNord', methods=['GET', 'POST'])

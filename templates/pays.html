@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
    <link rel="stylesheet" href="../static/css/main2.css">
     <title> covid19 stat </title>
 </head>
 <body>
 
 <div class="centre">
-    <h1 style="color:#992525;">Sélectionner un pays</h1>
+    <h1>Sélectionner un pays </h1>
 <form action="{{ url_for('line') }} " method="post">
 
     <select id="country" name="country">

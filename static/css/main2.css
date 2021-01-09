@@ -1,5 +1,18 @@
 body {
-background-color: #1d1919;
+
+background-image:url(https://i.pinimg.com/originals/58/3d/d6/583dd64cb8af4521a4e9dfcefbf7989c.png);
+}
+
+h1
+{
+  font-size: 38px;
+  color: #992525;
+  padding:16px;
+  font-weight:lighter;
+
+  display:block;
+
+
 }
 
 div.centre {
