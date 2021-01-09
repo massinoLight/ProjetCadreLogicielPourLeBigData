@@ -6,6 +6,36 @@ Point 5. Creat a folder called .ebextensions
 Point 6. Inside .ebextensions we need a python.config file.
 Point 7. Mention the commands in python.config
 
-Azerty
+acceder au cluster sous Amazon
+ssh -i "cleCluster.pem" hadoop@ec2-3-235-44-213.compute-1.amazonaws.com
 
-ssh -i "cleRsaUbuntuServer.pem" ubuntu@ec2-3-95-150-120.compute-1.amazonaws.com
+les requetes utlisées:
+
+telecharger le fichier csv :
+-----------------------------------------------------
+$ wget https://eu-api.backendless.com/F22BEF3A-6DF1-9912-FFF8-22AC7C632A00/console/amnpmepebmkfpktlexciseggvmngakfgrfbp/files/view/covid19/covid19.csv
+
+
+Creer un repertoir sous hdfs:
+-----------------------------------------------------
+$hdfs dfs -mkdir /user/hive/warehouse/lacovid/
+
+Ajouter le fichier csv a hdfs:
+-----------------------------------------------------
+$hdfs dfs -put /cheminDuFichier /user/hive/warehouse/lacovid/
+
+Creration d'une table sous Hive (default database):
+-----------------------------------------------------
+hive> create external table temp_covid ( iso_code STRING,continent STRING,location STRING,the_date DATE,total_cases FLOAT,
+new_cases FLOAT,new_cases_smoothed FLOAT,total_deaths FLOAT,new_deaths FLOAT,new_deaths_smoothed FLOAT,
+total_cases_per_million FLOAT,new_cases_per_million FLOAT,new_cases_smoothed_per_million FLOAT,
+total_deaths_per_million FLOAT,new_deaths_per_million FLOAT,new_deaths_smoothed_per_million FLOAT,
+reproduction_rate FLOAT,icu_patients FLOAT,icu_patients_per_million FLOAT,hosp_patients FLOAT,hosp_patients_per_million FLOAT,
+weekly_icu_admissions FLOAT,weekly_icu_admissions_per_million FLOAT,weekly_hosp_admissions FLOAT,weekly_hosp_admissions_per_million FLOAT,new_tests FLOAT,
+total_tests FLOAT,total_tests_per_thousand FLOAT,new_tests_per_thousand FLOAT,new_tests_smoothed FLOAT,new_tests_smoothed_per_thousand FLOAT,positive_rate FLOAT,
+tests_per_case FLOAT,tests_units FLOAT,total_vaccinations FLOAT,total_vaccinations_per_hundred FLOAT,stringency_index FLOAT,population FLOAT,population_density FLOAT,
+median_age FLOAT,aged_65_older FLOAT,aged_70_older FLOAT,gdp_per_capita FLOAT,extreme_poverty FLOAT,cardiovasc_death_rate FLOAT,diabetes_prevalence FLOAT,
+female_smokers FLOAT,male_smokers FLOAT,handwashing_facilities FLOAT,
+hospital_beds_per_thousand FLOAT,life_expectancy FLOAT,human_development_index FLOAT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LOCATION '/user/hive/warehouse/lacovid/';
