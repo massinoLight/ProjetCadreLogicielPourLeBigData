@@ -52,9 +52,9 @@ Lien vers le serveurrrrrrrrrrrr
 
 
 ### Ref
- - https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c 
- - https://fr.wikipedia.org/wiki/Carte_autoadaptative
- - SYDE 522 – Machine Intelligence (Winter 2019, University of Waterloo)
+ - https://flask.palletsprojects.com/en/1.1.x/
+ - https://docs.aws.amazon.com/ec2/?id=docs_gateway
+ - https://hadoop.apache.org/docs/stable/
 
 
    
