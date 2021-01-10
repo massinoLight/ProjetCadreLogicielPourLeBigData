@@ -23,14 +23,7 @@ def listeData(chemin):
 
 l=listeData("JSONData/monde.json")
 
-"""for item in l:
-    print(item ['Code pays'])
-    print("Hospitalisation "+str(item['Nombre d\'hospitalisation en moyenne']))
-    print("test moyenne "+str(item['Nombre de tests en moyenne']))
-    print("age moyen "+str(item['Moyenne d\'age']))
-    print("cas moyenne "+str(item['Moyenne des cas']))
-    print("morts "+str(item['Moyenne des morts']))
-    print("***********************")"""
+
 
 """
 fonction qui va attribuer un score entre 0 et 100 selon la gravité du pays 
@@ -78,3 +71,45 @@ def isoCode(l):
     for item in l:
         isoCode.append(item['Code pays'])
     return isoCode
+
+
+def mortMoyenne(l):
+    moyenne_mort = []
+    for item in l:
+        moyenne_mort.append(item['Moyenne des morts'])
+    return moyenne_mort
+
+def casMoyenne(l):
+    moyenne_cas = []
+    for item in l:
+        moyenne_cas.append(item['Moyenne des cas'])
+    return moyenne_cas
+
+
+def hospitalisation(l):
+    moyenne_hospitalisation = []
+    for item in l:
+        moyenne_hospitalisation.append(item['Nombre d\'hospitalisation en moyenne'])
+    return moyenne_hospitalisation
+
+def ageMoyen(l):
+    moyenne_age = []
+    for item in l:
+        moyenne_age.append(item['Moyenne d\'age'])
+    return moyenne_age
+
+def testMoyen(l):
+    moyenne_test = []
+    for item in l:
+        moyenne_test.append(item['Nombre de tests en moyenne'])
+    return moyenne_test
+
+
+"""for item in l:
+    print(item ['Code pays'])
+    print("Hospitalisation "+str(item['Nombre d\'hospitalisation en moyenne']))
+    print("test moyenne "+str(item['Nombre de tests en moyenne']))
+    print("age moyen "+str(item['Moyenne d\'age']))
+    print("cas moyenne "+str(item['Moyenne des cas']))
+    print("morts "+str(item['Moyenne des morts']))
+    print("***********************")"""
