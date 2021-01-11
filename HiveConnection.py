@@ -1,20 +1,18 @@
-import pyhs2
-
-with pyhs2.connect(host='ec2-3-235-44-213.compute-1.amazonaws.com',
-                   port=10000,
-                   user='hive',
-                   database='default') as conn:
-    with conn.cursor() as cur:
-        # Show databases
-        print(cur.getDatabases())
+import os
+import pycountry
+############################################################
+#      permet de générer le fichier monde.json              #
+# a partir de Hive qui va exécuter le traitement de la req #
+############################################################
 
 
-        # Execute query
-        cur.execute("select * from table")
+if __name__ == "__main__":
+    paysArg=""
 
-        # Return column info from query
-        print (cur.getSchema())
+    for country in pycountry.countries:
+        paysArg=paysArg+" "+country.alpha_3
 
-        # Fetch table results
-        for i in cur.fetch():
-            print(i)
+    dernier = os.system("java -jar ./hive.jar "+paysArg)
+
+
+

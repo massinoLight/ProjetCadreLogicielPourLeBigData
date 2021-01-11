@@ -114,4 +114,5 @@ def monde():
     h = hospitalisation(l)
     a = ageMoyen(l)
     t = testMoyen(l)
-    return render_template('map.html' , continent='world', codepays=iso, scoring=sc,mort=m,cas=cas,hospitalisation=h,age=a,test=t)
+    comb=zip(h,m)
+    return render_template('map.html' , continent='world', codepays=iso, scoring=sc,mort=m,cas=cas,hospitalisation=h,age=a,test=t,combiner=comb)

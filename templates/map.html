@@ -14,24 +14,8 @@
     type: 'scattergeo',
     mode: 'markers',
 
-    mort: [{% for item in mort %}
-            "{{ item }}",
-          {% endfor %}],
-
-    cas: [{% for item in cas %}
-            "{{ item }}",
-          {% endfor %}],
-
-    age: [{% for item in age %}
-            "{{ item }}",
-          {% endfor %}],
-
-    test: [{% for item in test %}
-            "{{ item }}",
-          {% endfor %}],
-
-    text: [{% for item in hospitalisation %}
-            "{{ item }}",
+    text: [{% for item in mort %}
+            "{{'nobre de mort en moyenne: '+ item | string }}",
           {% endfor %}],
 
 
@@ -58,16 +42,16 @@
         cmax: 50,
         colorscale: 'red',
         colorbar: {
-            title: 'Gravité du pays',
-            ticksuffix: ' moyenne',
-            showticksuffix: 'last'
+            title: 'Échelle de gravité'
         },
         line: {
+
             color: 'black'
         }
-    },
-    name: 'europe data',
-    hovertemplate:'<br><b>Nombre d hopitalisation:</b>: %{text}<br>' +
+    }
+
+
+    ,hoverinfo: 'all'
 
 
 }];
@@ -76,7 +60,9 @@ var layout = {
     'geo': {
         'scope':'{{ continent }}',
         'resolution': 200
-    }
+    },
+
+    title: "Information covid19"
 };
 
 Plotly.newPlot('myDiv', data, layout);
