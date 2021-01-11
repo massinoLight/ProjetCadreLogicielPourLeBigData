@@ -7,7 +7,7 @@
 
 . .
 
-Ce programme est une implémentation de cette algorithme tésté sur une base de données (iris data)
+Cette application sous Python+JAVA affiche sur une map un code couleur qui détermine a quel point un pays et touché par la covid19
 
  
  
