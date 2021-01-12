@@ -51,8 +51,6 @@ $ export FLASK_ENV=development
 $ flask run
 ```
 
- ### Resultat obtenu
-Lien vers le serveurrrrrrrrrrrr
 
 
 ### Ref
