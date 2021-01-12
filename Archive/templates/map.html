@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js">
+        </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myDiv">
+</div>
+<script>
+   var data = [{
+    type: 'scattergeo',
+    mode: 'markers',
+
+    text: [{% for item in mort %}
+            "{{'nobre de mort en moyenne: '+ item | string }}",
+          {% endfor %}],
+
+
+
+
+    locations: [
+    {% for item in codepays %}
+            "{{ item }}",
+          {% endfor %}
+
+    ],
+    marker: {
+        size: [
+        {% for item in codepays %}
+            "{{ 10 }}",
+          {% endfor %}
+        ],
+        color: [
+        {% for item in scoring %}
+            "{{ item }}",
+          {% endfor %}
+        ],
+        cmin: 50,
+        cmax: 50,
+        colorscale: 'red',
+        colorbar: {
+            title: 'Échelle de gravité'
+        },
+        line: {
+
+            color: 'black'
+        }
+    }
+
+
+    ,hoverinfo: 'all'
+
+
+}];
+
+var layout = {
+    'geo': {
+        'scope':'{{ continent }}',
+        'resolution': 200
+    },
+
+    title: "Information covid19"
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>

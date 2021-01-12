@@ -1,0 +1,17 @@
+NameNode:
+ssh -i "cleRsaUbuntuServer.pem" ubuntu@ec2-3-95-150-120.compute-1.amazonaws.com
+
+DataNode001:
+ssh -i "cleRsaUbuntuServer.pem" ubuntu@ec2-3-83-114-7.compute-1.amazonaws.com
+
+
+DataNode002:
+ssh -i "cleRsaUbuntuServer.pem" ubuntu@ec2-3-83-222-155.compute-1.amazonaws.com
+
+
+Acceder via browser:
+
+http://ec2-3-95-150-120.compute-1.amazonaws.com:8088
+http://ec2-3-95-150-120.compute-1.amazonaws.com:50070
+
+
