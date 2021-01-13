@@ -1,7 +1,11 @@
+import random
+import time
+import os
 from flask import Flask, Markup, render_template,request
 from covid_19 import nbCasTotal, nbMortTotal, listeData, casEnMoyenneParMois, mortEnMoyenneParMois
 from traitement import *
 import datetime
+from twitter import *
 
 application = Flask(__name__)
 
@@ -16,6 +20,22 @@ colors = [
     "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA",
     "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
     "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
+
+
+
+OAUTH_TOKEN="1348441876685344775-4FGcZIDUnoMeRM48sKPcLAKcgRMlFn"
+OAUTH_SECRET="goLSFOD43UHPM7bHpuFpryrpeOBv7Jz6IkNH0ASIxEFJx"
+CONSUMER_KEY="bSAL2fgRBaXLYp4hua5ZVfVX9"
+CONSUMER_SECRET="EnZRCCgMI32E9QOQu9Z4YXEK7Ou5jdlzWvGiqHg4I0G3m0dp4q"
+
+leTwitts=["SantePubliqueFr","olivierveran","CoronaNumbers","EmmanuelMacron"]
+r=random.randint(0, 2)
+
+twitter = Twitter(
+            auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET,
+                       CONSUMER_KEY, CONSUMER_SECRET)
+
+           )
 
 
 
@@ -34,7 +54,20 @@ def line():
 
 @application.route('/', methods=["GET", "POST"])
 def envoyer():
-    return render_template('index.html')
+
+    myTweets = twitter.statuses.user_timeline(count=4)
+
+    # fetch 3 random tweets de la liste des twitters precedente
+    itpTweets = twitter.statuses.user_timeline(screen_name=leTwitts.__getitem__(r), count=4)
+
+
+    templateData = {
+        'title': 'tweets Corona virus',
+        'myTweets': myTweets,
+        'itpTweets': itpTweets
+    }
+
+    return render_template('index.html', **templateData)
 
 @application.route('/pays', methods=['GET', 'POST'])
 def pays():
@@ -116,3 +149,16 @@ def monde():
     t = testMoyen(l)
     comb=zip(h,m)
     return render_template('map.html' , continent='world', codepays=iso, scoring=sc,mort=m,cas=cas,hospitalisation=h,age=a,test=t,combiner=comb)
+
+
+
+@application.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
+
+# This is a jinja custom filter
+@application.template_filter('strftime')
+def _jinja2_filter_datetime(date, fmt=None):
+    pyDate = time.strptime(date,'%a %b %d %H:%M:%S +0000 %Y') # convert twitter date string into python date/time
+    return time.strftime('%Y-%m-%d %H:%M:%S', pyDate) # return the formatted date.
