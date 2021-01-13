@@ -11,7 +11,7 @@ Cette application sous Python+JAVA affiche sur une map un code couleur qui déte
 
 ## lien de l'application 
 
-http://covidmap-env.eba-kzsiybbq.us-east-1.elasticbeanstalk.com/
+http://covid19statandtweets-env.eba-c46mgtts.us-east-1.elasticbeanstalk.com/
 
  
  
